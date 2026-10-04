@@ -1,0 +1,67 @@
+# ==============================
+# Environment / Secrets
+# ==============================
+.env
+.env.*
+!.env.example
+!.env.local.example
+# Spring Boot secrets/config overrides
+backend/src/main/resources/application.properties
+application-local.properties
+application-local.yml
+application-local.yaml
+
+# ==============================
+# IntelliJ IDEA
+# ==============================
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# ==============================
+# Java / Spring Boot
+# ==============================
+backend/target/
+backend/build/
+*.class
+*.jar
+!backend/gradle/wrapper/gradle-wrapper.jar
+*.war
+*.log
+backend/.gradle/
+.gradle/
+
+# ==============================
+# Node / Next.js
+# ==============================
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/dist/
+frontend/.turbo/
+
+# Package-manager logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ==============================
+# OS files
+# ==============================
+.DS_Store
+Thumbs.db
+
+# ==============================
+# IDE / temporary files
+# ==============================
+.vscode/
+*.tmp
+*.temp
+
+# Unused local Docker configuration
+docker-compose.yml
+
+# Local database setup
+database/setup.sql

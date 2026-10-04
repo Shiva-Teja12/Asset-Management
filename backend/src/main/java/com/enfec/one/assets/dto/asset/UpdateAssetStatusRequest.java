@@ -1,0 +1,1 @@
+package com.enfec.one.assets.dto.asset; import com.enfec.one.assets.enums.AssetStatus; import jakarta.validation.constraints.*; public record UpdateAssetStatusRequest(@NotNull AssetStatus status,@NotBlank @Size(max=1000)String reason){}

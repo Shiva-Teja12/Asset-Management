@@ -1,0 +1,1 @@
+package com.enfec.one.assets.dto.asset; import java.time.Instant; import java.util.UUID; public record AssetAssignmentResponse(UUID id,UUID assetId,UUID employeeId,String employeeName,Instant assignedAt,String assignedBy,String reason,Instant returnedAt,String returnedBy,String returnReason){}

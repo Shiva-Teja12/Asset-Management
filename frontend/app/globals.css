@@ -1,0 +1,350 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #10223d;
+  background: #f5f8fc;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.loginPage {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 42% 58%;
+}
+
+.welcomePanel {
+  position: relative;
+  min-height: 100vh;
+  padding: 35px 45px;
+  background:
+    radial-gradient(circle at 20% 80%, #dbeafe 0, transparent 32%),
+    linear-gradient(145deg, #eef6ff, #f8fbff);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+
+.brandIcon {
+  width: 29px;
+  height: 29px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: #1674ea;
+  color: white;
+  transform: rotate(12deg);
+}
+
+.welcomeContent {
+  max-width: 520px;
+  margin-top: 110px;
+}
+
+.welcomeContent h1 {
+  margin: 0;
+  font-size: 42px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.welcomeContent p {
+  margin-top: 22px;
+  color: #61728b;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.assetIllustration {
+  position: relative;
+  height: 330px;
+  margin-top: 35px;
+}
+
+.illustrationCircle {
+  position: absolute;
+  left: 65px;
+  top: 35px;
+  width: 280px;
+  height: 220px;
+  border-radius: 50%;
+  background: #dceaff;
+}
+
+.laptop {
+  position: absolute;
+  left: 100px;
+  top: 65px;
+  transform: rotate(-7deg);
+}
+
+.laptopScreen {
+  width: 210px;
+  height: 135px;
+  padding: 10px;
+  border: 8px solid #3476c9;
+  border-radius: 12px;
+  background: #e8f3ff;
+}
+
+.screenGlow {
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(
+    135deg,
+    #eaf4ff,
+    #bad8ff
+  );
+}
+
+.laptopBase {
+  width: 245px;
+  height: 18px;
+  margin-left: -18px;
+  border-radius: 3px 3px 15px 15px;
+  background: #5a8fd0;
+}
+
+.mouseShape {
+  position: absolute;
+  left: 350px;
+  top: 185px;
+  width: 65px;
+  height: 85px;
+  border-radius: 50% 50% 45% 45%;
+  background: linear-gradient(
+    135deg,
+    #9fc7ff,
+    #4c8bdc
+  );
+  transform: rotate(28deg);
+}
+
+.gear {
+  position: absolute;
+  color: #72a9ed;
+}
+
+.gearOne {
+  left: 30px;
+  top: 95px;
+  font-size: 40px;
+}
+
+.gearTwo {
+  left: 390px;
+  top: 90px;
+  font-size: 52px;
+}
+
+.formPanel {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 50px;
+  background: #ffffff;
+}
+
+.authCard {
+  width: min(100%, 520px);
+  padding: 36px;
+  border: 1px solid #e0e7f0;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 18px 55px rgba(30, 61, 100, 0.08);
+}
+
+.modeTabs,
+.roleTabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.modeTabs {
+  margin-bottom: 24px;
+  border-bottom: 1px solid #dce4ee;
+}
+
+.modeTabs button {
+  padding: 13px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: #52657d;
+  font-weight: 600;
+}
+
+.modeTabs .activeTab {
+  border-bottom-color: #1473e6;
+  color: #1473e6;
+}
+
+.roleTabs {
+  gap: 10px;
+  margin-bottom: 26px;
+}
+
+.roleTabs button {
+  padding: 11px;
+  border: 1px solid #d9e1ec;
+  border-radius: 5px;
+  background: #f8fafc;
+  color: #42546b;
+}
+
+.roleTabs .activeRole {
+  border-color: #1473e6;
+  background: #1473e6;
+  color: white;
+}
+
+.authCard form {
+  display: flex;
+  flex-direction: column;
+}
+
+.authCard label {
+  margin: 0 0 7px;
+  color: #24364e;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.authCard input {
+  width: 100%;
+  height: 47px;
+  margin-bottom: 19px;
+  padding: 0 14px;
+  border: 1px solid #d5deea;
+  border-radius: 6px;
+  outline: none;
+  color: #1a2c44;
+  background: white;
+}
+
+.authCard input:focus {
+  border-color: #1473e6;
+  box-shadow: 0 0 0 3px rgba(20, 115, 230, 0.08);
+}
+
+.loginOptions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: -3px 0 22px;
+}
+
+.loginOptions .remember {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
+  font-weight: 400;
+}
+
+.remember input {
+  width: 15px;
+  height: 15px;
+  margin: 0;
+}
+
+.linkButton {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #076ee5;
+  font-weight: 600;
+}
+
+.primaryButton {
+  width: 100%;
+  height: 48px;
+  border: 0;
+  border-radius: 6px;
+  background: #1473e6;
+  color: white;
+  font-weight: 700;
+}
+
+.primaryButton:hover {
+  background: #0864ce;
+}
+
+.primaryButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.bottomText {
+  margin: 24px 0 0;
+  text-align: center;
+  color: #697a90;
+  font-size: 14px;
+}
+
+.employeeBadge {
+  margin-bottom: 25px;
+  padding: 11px;
+  border-radius: 6px;
+  background: #eaf3ff;
+  color: #086bdc;
+  text-align: center;
+  font-weight: 700;
+}
+
+.errorMessage {
+  margin: 0 0 18px;
+  padding: 11px 13px;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  background: #fef2f2;
+  color: #b42318;
+  font-size: 14px;
+}
+
+@media (max-width: 850px) {
+  .loginPage {
+    grid-template-columns: 1fr;
+  }
+
+  .welcomePanel {
+    display: none;
+  }
+
+  .formPanel {
+    padding: 25px;
+  }
+
+  .authCard {
+    padding: 25px;
+  }
+}
+
+.demoText {
+  margin: 14px 0 0;
+  text-align: center;
+  color: #697a90;
+  font-size: 13px;
+}

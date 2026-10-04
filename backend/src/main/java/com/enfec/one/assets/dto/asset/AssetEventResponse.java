@@ -1,0 +1,1 @@
+package com.enfec.one.assets.dto.asset; import com.enfec.one.assets.enums.AssetStatus; import java.time.Instant; import java.util.UUID; public record AssetEventResponse(UUID id,UUID assetId,AssetStatus previousStatus,AssetStatus newStatus,String actor,String reason,Instant occurredAt){}

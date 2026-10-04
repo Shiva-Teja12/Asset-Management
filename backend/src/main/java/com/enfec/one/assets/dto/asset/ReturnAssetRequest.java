@@ -1,0 +1,1 @@
+package com.enfec.one.assets.dto.asset; import jakarta.validation.constraints.*; public record ReturnAssetRequest(@NotBlank @Size(max=1000)String reason){}
