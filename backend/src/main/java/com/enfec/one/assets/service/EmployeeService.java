@@ -135,7 +135,7 @@ public class EmployeeService {
 
   AppUser admin =
           current.requireRole(
-                  Role.ASSET_ADMIN
+                  Role.HR_ADMIN
           );
 
   AppUser employee =

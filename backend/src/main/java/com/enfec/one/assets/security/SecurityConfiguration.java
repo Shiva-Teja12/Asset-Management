@@ -16,8 +16,12 @@ public class SecurityConfiguration {
             .cors(c->{})
             .sessionManagement(s->s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(a->a
-                .requestMatchers("/api/auth/**","/actuator/health/**").permitAll()
-                .anyRequest().authenticated())
+                    .requestMatchers(
+                            "/api/auth/**",
+                            "/actuator/health",
+                            "/actuator/health/**"
+                    ).permitAll()
+                    .anyRequest().authenticated())
             .addFilterBefore(filter,UsernamePasswordAuthenticationFilter.class)
             .build();
     }

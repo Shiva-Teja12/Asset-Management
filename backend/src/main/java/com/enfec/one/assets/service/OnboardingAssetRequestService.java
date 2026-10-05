@@ -128,6 +128,25 @@ public class OnboardingAssetRequestService {
                 hrAdmin.getName()
         );
 
+        /*
+         * Keep the employee's AppUser department synchronized
+         * with the department selected by HR during onboarding.
+         */
+        users.findByEmailIgnoreCase(
+                        clean(request.getEmployeeEmail())
+                )
+                .filter(user ->
+                        user.getRole() == Role.EMPLOYEE
+                )
+                .ifPresent(employee -> {
+
+                    employee.setDepartment(
+                            clean(request.getDepartment())
+                    );
+
+                    users.save(employee);
+                });
+
         return response(
                 requests.save(entity)
         );

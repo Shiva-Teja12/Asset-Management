@@ -1373,23 +1373,49 @@ const directPurchaseOrderId =
     setWorking(true);
 
     try {
-await api(
-  "/api/v1/assets",
-  {
-    method: "POST",
+const createdAsset =
+  await api<Asset>(
+    "/api/v1/assets",
+    {
+      method: "POST",
 
-    body:
-      JSON.stringify({
-        ...buildAssetPayload(
-          newAsset,
-          purchaseOrderId
-        ),
+      body:
+        JSON.stringify({
+          ...buildAssetPayload(
+            newAsset,
+            purchaseOrderId
+          ),
 
-        purchaseOrderId:
-          purchaseOrderId,
-      }),
-  }
-);
+          purchaseOrderId:
+            purchaseOrderId,
+        }),
+    }
+  );
+
+const onboardingRequestId =
+  searchParams.get(
+    "onboardingRequestId"
+  );
+
+if (onboardingRequestId) {
+  await api(
+    `/api/v1/onboarding/requests/${onboardingRequestId}/asset-admin/allocate`,
+    {
+      method: "POST",
+
+      headers: {
+        "Content-Type":
+          "application/json",
+      },
+
+      body:
+        JSON.stringify({
+          assetId:
+            createdAsset.id,
+        }),
+    }
+  );
+}
 
       setNewAsset(
         emptyAssetForm()
